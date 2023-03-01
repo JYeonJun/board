@@ -12,6 +12,7 @@ React + Spring boot + MySQL + AWS
   - MySQL Driver
   - Lombok
   - Validation
+  - jwt
 
 ## React
 
