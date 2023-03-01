@@ -1,16 +1,18 @@
 package com.study.board.dto;
 
-import com.study.board.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignInResponseDto {
+public class SignInDto {
 
-    private String token;
-    private int exprTime;
-    private UserEntity user;
+    @NotBlank
+    private String userEmail;
+    @NotBlank
+    private String userPassword;
 }
