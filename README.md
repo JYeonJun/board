@@ -15,6 +15,7 @@ React + Spring boot + MySQL + AWS
 ## React
 
 - npm i axios
+- npm install @mui/material @emotion/react @emotion/styled
 
 ## 구현 기능
 
