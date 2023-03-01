@@ -1,16 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
-import SignUp from "./views/SignUp";
+import Authentication from "./views/Authentication";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <SignUp />
-    </div>
-  );
+  return <Authentication />;
 }
 
 export default App;
