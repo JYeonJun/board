@@ -8,12 +8,14 @@ import com.study.board.entity.UserEntity;
 import com.study.board.repository.UserRepository;
 import com.study.board.security.TokenProvider;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 // TODO: 서비스 인터페이스 구현
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthService {
 
     private final UserRepository userRepository;
@@ -54,11 +56,14 @@ public class AuthService {
         return ResponseDto.setSuccess("SignUp Success!", null);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public ResponseDto<SignInResponseDto> signIn(SignInDto dto) {
 
         String userEmail = dto.getUserEmail();
         String userPassword = dto.getUserPassword();
+
+        log.debug("userEmail = {}", userEmail);
+        log.debug("userPassword = {}", userPassword);
 
         try {
             boolean existed = userRepository.existsByUserEmailAndUserPassword(userEmail, userPassword);
